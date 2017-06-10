@@ -1,9 +1,12 @@
 let express = require('express')
+let crypto = require('crypto')
+let bodyParser = require('body-parser')
 let spawn = require('child_process').spawn
 let app = express()
+app.use(bodyParser.json());
 app.set('view engine', 'jade')
 
-let secret = "secrererereret"; let port = 4000;
+let secret = "secrererereret";
 
 app.post('/webhook',(req,res)=>{
     
