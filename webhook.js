@@ -12,18 +12,6 @@ app.post('/webhook',(req,res)=>{
     
     console.log('webhook inininininin')
 
-    console.log('[LOG] request received');
-    res.status(400).set('Content-Type', 'application/json');
-
-    let jsonString = JSON.stringify(req.body);
-    let hash = "sha1=" + crypto.createHmac('sha1', secret).update(jsonString).digest('hex');
-
-    if (hash != req.get('x-hub-signature')) {
-        console.log('[ERROR] invalid key');
-        let data = JSON.stringify({ "error": "invalid key", key: hash });
-        return res.end(data);
-    }
-
     let deploySh = spawn('sh', ['hook.sh']);
     deploySh.stdout.on('data', (data)=>{
         let buff = new Buffer(data);
