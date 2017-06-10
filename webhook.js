@@ -15,7 +15,8 @@ app.post('/webhook',(req,res)=>{
         console.log(buff.toString('utf-8'));
     })
 
-    res.render('index', {param:req})
+    let data = JSON.stringify({ "success": true });
+    return res.status(200).end(data);
 })
 
 app.listen(4000, ()=>{
