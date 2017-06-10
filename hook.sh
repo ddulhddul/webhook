@@ -1,5 +1,6 @@
 REPOSITORY = "../youtube"
 cd $REPOSITORY
+pm2 stop app.js
 git pull
-pm2 stop app
-pm2 start app
+npm install
+pm2 start app.js
