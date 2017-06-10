@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "child-process": "^1.0.2",
     "express": "^4.15.2",
     "jade": "^1.11.0"
   }

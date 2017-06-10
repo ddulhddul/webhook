@@ -1,5 +1,5 @@
 let express = require('express')
-let spawn = require('spawn')
+let spawn = require('child-process').spawn
 let app = express()
 app.set('view engine', 'jade')
 
