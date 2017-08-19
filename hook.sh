@@ -1,4 +1,4 @@
-REPOSITORY="/youtube"
+REPOSITORY="/root/youtube"
 cd $REPOSITORY
 pm2 stop app.js
 git pull
